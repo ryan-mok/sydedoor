@@ -14,6 +14,8 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
+  gem 'pry'
+  gem 'pry-byebug'
 end
 
 group :development do
