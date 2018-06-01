@@ -18,6 +18,7 @@ group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
   gem 'pry'
   gem 'pry-byebug'
+  gem 'rubocop', '~> 0.56.0', require: false
 end
 
 group :development do
