@@ -9,7 +9,6 @@ gem 'coffee-rails', '4.2.2'
 gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
-gem 'rails-controller-testing'
 
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
@@ -18,6 +17,7 @@ group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
   gem 'pry'
   gem 'pry-byebug'
+  gem 'rubocop', '~> 0.56.0', require: false
 end
 
 group :development do
@@ -25,6 +25,14 @@ group :development do
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
+end
+
+group :test do
+  gem 'rails-controller-testing', '1.0.2'
+  gem 'minitest',                 '5.10.3'
+  gem 'minitest-reporters',       '1.1.14'
+  gem 'guard',                    '2.13.0'
+  gem 'guard-minitest',           '2.4.4'
 end
 
 group :production do
