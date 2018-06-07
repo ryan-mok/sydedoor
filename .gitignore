@@ -24,6 +24,3 @@
 
 # IntelliJ files
 /.idea
-
-# Ignore Gemfile.lock due to cross-platform development
-Gemfile.lock
