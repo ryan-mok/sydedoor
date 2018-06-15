@@ -5,7 +5,6 @@ class ReviewTest < ActiveSupport::TestCase
   def setup
     @user = User.create(first_name: "Han", last_name: "Solo", email: "hsolo@milfalcon.com", password: "password", password_confirmation: "password")
 
-
     @review = Review.create(user_id: @user.id,
                          company_id: "Death Star Inc.",
                          rating: 4.5,
@@ -14,7 +13,7 @@ class ReviewTest < ActiveSupport::TestCase
                          year: 1977,
                          salary: "10-20",
                          location: "In a galaxy far far away.....",
-                         review_desc: "Job can be pretty stressful at times but has awesome perks like cool suits. Great CEO XD")
+                         description: "Job can be pretty stressful at times but has awesome perks like cool suits. Great CEO XD")
     end
 
   test "should be valid" do
@@ -61,8 +60,8 @@ class ReviewTest < ActiveSupport::TestCase
     assert_not @review.valid?
   end
 
-  test "review_desc should be present" do
-    @review.review_desc = "   "
+  test "description should be present" do
+    @review.description = "   "
     assert_not @review.valid?
   end
 

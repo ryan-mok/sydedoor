@@ -13,7 +13,7 @@ class Review < ApplicationRecord
             }
 
   #Team can discuss whether or not this is a reasonable max length to set
-  validates :review_desc,
+  validates :description,
             presence: true,
             length: {maximum: 2500}
 
@@ -38,3 +38,4 @@ class Review < ApplicationRecord
   validates :location,
             presence: true
 end
+

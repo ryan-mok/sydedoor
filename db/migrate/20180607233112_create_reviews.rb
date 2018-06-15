@@ -3,7 +3,7 @@ class CreateReviews < ActiveRecord::Migration[5.1]
     create_table :reviews do |t|
       t.string :user_id
       t.string :company_id
-      t.text :review_desc
+      t.text :description
       t.float :rating
       t.string :job_title
       t.string :term
