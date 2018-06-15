@@ -3,7 +3,10 @@ require 'test_helper'
 class ReviewTest < ActiveSupport::TestCase
 
   def setup
-    @review = Review.new(user_id: "darthvader@rebel4lyfe.ca",
+    @user = User.create(first_name: "Han", last_name: "Solo", email: "hsolo@milfalcon.com", password: "password", password_confirmation: "password")
+
+
+    @review = Review.create(user_id: @user.id,
                          company_id: "Death Star Inc.",
                          rating: 4.5,
                          job_title: "Father",
@@ -12,7 +15,7 @@ class ReviewTest < ActiveSupport::TestCase
                          salary: "10-20",
                          location: "In a galaxy far far away.....",
                          review_desc: "Job can be pretty stressful at times but has awesome perks like cool suits. Great CEO XD")
-  end
+    end
 
   test "should be valid" do
     assert @review.valid?

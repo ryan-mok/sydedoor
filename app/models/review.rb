@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :user
-
+  validates_associated :user
   validates :user_id, presence: true
   validates :company_id, presence: true
 
@@ -27,6 +27,7 @@ class Review < ApplicationRecord
   validates :year,
             presence: true,
             numericality: {
+                only_integer: true,
                 greater_than_or_equal_to: 1960
             },
             format: {with: /\A[0-9]{4}\z/, message: 'Not valid year'}
