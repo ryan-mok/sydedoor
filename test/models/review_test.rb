@@ -5,8 +5,7 @@ class ReviewTest < ActiveSupport::TestCase
   def setup
     @user = User.create(first_name: "Han", last_name: "Solo", email: "hsolo@milfalcon.com", password: "password", password_confirmation: "password")
 
-    @review = Review.create(user_id: @user.id,
-                         company_id: "Death Star Inc.",
+    @review = Review.new(company_id: "Death Star Inc.",
                          rating: 4.5,
                          job_title: "Father",
                          term: "4A",
@@ -14,7 +13,8 @@ class ReviewTest < ActiveSupport::TestCase
                          salary: "10-20",
                          location: "In a galaxy far far away.....",
                          description: "Job can be pretty stressful at times but has awesome perks like cool suits. Great CEO XD")
-    end
+    @review.user = @user
+  end
 
   test "should be valid" do
     assert @review.valid?
