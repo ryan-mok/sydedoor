@@ -1,3 +1,4 @@
 class Company < ApplicationRecord
-  validates :name,  presence: true
+  has_many :reviews
+  validates :name, presence: true
 end

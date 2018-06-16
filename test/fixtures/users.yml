@@ -1,0 +1,5 @@
+jarjar:
+  first_name: Jar Jar
+  last_name: Binks
+  email: jjbinks@galacticsenate.org
+  password_digest: <%= User.digest('password') %>

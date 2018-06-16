@@ -4,7 +4,12 @@ class CreateReviews < ActiveRecord::Migration[5.1]
       t.string :user_id
       t.string :company_id
       t.text :description
-      t.integer :rating
+      t.float :rating
+      t.string :job_title
+      t.string :term
+      t.integer :year
+      t.string :salary
+      t.string :location
 
       t.timestamps
     end
