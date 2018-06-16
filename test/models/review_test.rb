@@ -3,17 +3,30 @@ require 'test_helper'
 class ReviewTest < ActiveSupport::TestCase
 
   def setup
-    @user = User.create(first_name: "Han", last_name: "Solo", email: "hsolo@milfalcon.com", password: "password", password_confirmation: "password")
+    @user = User.create(
+      first_name: "Han",
+      last_name: "Solo",
+      email: "hsolo@milfalcon.com",
+      password: "password",
+      password_confirmation: "password")
 
-    @review = Review.new(company_id: "Death Star Inc.",
-                         rating: 4.5,
-                         job_title: "Father",
-                         term: "4A",
-                         year: 1977,
-                         salary: "10-20",
-                         location: "In a galaxy far far away.....",
-                         description: "Job can be pretty stressful at times but has awesome perks like cool suits. Great CEO XD")
+    @review = Review.create(
+      rating: 4.5,
+      job_title: "Father",
+      term: "4A",
+      year: 1977,
+      salary: "10-20",
+      location: "In a galaxy far far away.....",
+      description: "Job can be pretty stressful at times but has awesome perks like cool suits. Great CEO XD")
+
+    @company = Company.create(
+      name: "Galactic Empire",
+      description: "hunt down every last rebel scum",
+      website: "https://www.empirestrikesback.org")
+
     @review.user = @user
+    @review.company = @company
+    @review.save! # Required for has_many associations of user and company to work
   end
 
   test "should be valid" do

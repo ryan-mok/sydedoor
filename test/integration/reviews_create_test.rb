@@ -4,7 +4,7 @@ class ReviewsCreateTest < ActionDispatch::IntegrationTest
   test "invalid review creation" do
     get new_review_path
     assert_no_difference 'Review.count' do
-      post reviews_path, params: { review: { user_id: 0, company_id: 0 } }
+      post reviews_path, params: { review: { rating: -1 } }
     end
     assert_template 'reviews/new'
   end
@@ -12,7 +12,15 @@ class ReviewsCreateTest < ActionDispatch::IntegrationTest
   test "valid review creation" do
     get new_review_path
     assert_difference 'Review.count', 1 do
-      post reviews_path, params: { review: { user_id: 0, company_id: 0, description: "my description", rating: 0 } }
+      post reviews_path, params: { review: { user_id: users(:jarjar).id,
+                                             company_id: companies(:senate).id,
+                                             rating: 4.5,
+                                             job_title: "Father",
+                                             term: "4A",
+                                             year: 1977,
+                                             salary: "10-20",
+                                             location: "In a galaxy far far away.....",
+                                             description: "Job can be pretty stressful at times but has awesome perks like cool suits. Great CEO XD" } }
     end
     follow_redirect!
     assert_template 'reviews/show'
