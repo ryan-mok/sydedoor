@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
 
   def index
-    @company = Company.all
+    @companies = Company.all
     render html: "TODO: company display page"
   end
 
@@ -14,7 +14,7 @@ class CompaniesController < ApplicationController
     if @company.save
       redirect_to @company
     else
-      render 'new'
+      render 'companies/createNewCompany'
     end
   end
 
