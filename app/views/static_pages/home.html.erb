@@ -8,5 +8,11 @@
     Hey! Welcome to SydeDoor.
   </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <% if logged_in? %>
+  	<%= link_to "Find Companies", "#", class: "btn btn-lg btn-primary" %>
+  	<%= link_to "Look at Reviews", "#", class: "btn btn-lg btn-primary" %>
+  	<%= link_to "Write a Review", "#", class: "btn btn-lg btn-primary" %>
+  <% else %>
+  	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>
