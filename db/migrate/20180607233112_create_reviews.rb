@@ -1,5 +1,5 @@
 class CreateReviews < ActiveRecord::Migration[5.1]
-  def up
+  def change
     create_table :reviews do |t|
       t.string :user_id
       t.string :company_id
@@ -13,9 +13,5 @@ class CreateReviews < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-  end
-
-  def down
-    drop_table :reviews
   end
 end
