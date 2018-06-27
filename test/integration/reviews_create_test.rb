@@ -13,7 +13,7 @@ class ReviewsCreateTest < ActionDispatch::IntegrationTest
     get new_review_path
     assert_difference 'Review.count', 1 do
       post reviews_path, params: { review: { user_id: users(:user1).id,
-                                             company_id: companies(:senate).id,
+                                             company_id: companies(:company1).id,
                                              rating: 4.5,
                                              job_title: "Father",
                                              term: "4A",
