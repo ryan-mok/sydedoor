@@ -1,11 +1,16 @@
-<% provide(:title, @user) %>
+<% provide(:title, @review) %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-        User ID: <%= @review.user_id %>
-        Company ID: <%= @review.company_id %>
-        Description: <%= @review.description %>
-        Rating: <%= @review.rating %>
+      User: <%= @review.user.first_name %> <%= @review.user.last_name %><br/>
+      Company Name: <%= @review.company.name %><br/>
+      Job Title: <%= @review.job_title %><br/>
+      Rating: <%= @review.rating %><br/>
+      Description: <%= @review.description %><br/>
+      Salary: <%= @review.salary %><br/>
+      Location: <%= @review.location %><br/>
+      Term: <%= @review.term %><br/>
+      Year: <%= @review.year %>
     </section>
   </aside>
 </div>

@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def index
-    render html: "TODO: display all reviews on this page"
+    @reviews = Review.all
   end
 
   def show
@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.user = current_user
     if @review.save
       redirect_to @review
     else
@@ -20,23 +21,25 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def edit
-    @review = Review.find(params[:id])
-  end
-
-  def update
-    @review = Review.find(params[:id])
-    if @review.update_attributes(review_params)
-      redirect_to @review
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    Review.find(params[:id]).destroy
-    redirect_to reviews_path
-  end
+  # Need to discuss how we want to implement edit/update/delete for reviews
+  #
+  # def edit
+  #   @review = Review.find(params[:id])
+  # end
+  #
+  # def update
+  #   @review = Review.find(params[:id])
+  #   if @review.update_attributes(review_params)
+  #     redirect_to @review
+  #   else
+  #     render 'edit'
+  #   end
+  # end
+  #
+  # def destroy
+  #   Review.find(params[:id]).destroy
+  #   redirect_to reviews_path
+  # end
 
   private
 

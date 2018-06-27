@@ -10,8 +10,8 @@
 
   <% if logged_in? %>
   	<%= link_to "Find Companies", "#", class: "btn btn-lg btn-primary" %>
-  	<%= link_to "Look at Reviews", "#", class: "btn btn-lg btn-primary" %>
-  	<%= link_to "Write a Review", "#", class: "btn btn-lg btn-primary" %>
+  	<%= link_to "Look at Reviews", reviews_path, class: "btn btn-lg btn-primary" %>
+  	<%= link_to "Write a Review", new_review_path, class: "btn btn-lg btn-primary" %>
   <% else %>
   	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
   <% end %>

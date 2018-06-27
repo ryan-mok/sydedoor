@@ -1,0 +1,30 @@
+<% provide(:title, "All Reviews") %>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Company</th>
+      <th>Job title</th>
+      <th>Rating</th>
+      <th>Description</th>
+      <th>Salary</th>
+      <th>Location</th>
+      <th>Term</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <% @reviews.each do |review| %>
+    <tr>
+      <td><%= review.user.first_name %> <%= review.user.last_name %></td>
+      <td><%= review.company.name %></td>
+      <td><%= review.job_title %></td>
+      <td><%= review.rating %></td>
+      <td><%= review.description %></td>
+      <td><%= review.salary %></td>
+      <td><%= review.location %></td>
+      <td><%= review.term %></td>
+      <td><%= review.year %></td>
+    </tr>
+  <% end %>
+</table>

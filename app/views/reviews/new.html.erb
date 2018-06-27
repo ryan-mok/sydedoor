@@ -1,16 +1,34 @@
 <% provide(:title, 'New Review') %>
 <h1>New Review</h1>
-<p>This will be a new review page for creating a new review.</p>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@review, url: reviews_path) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :description %>
-      <%= f.text_field :description %>
+      <p>Note: Enter the company id for an existing company for now.</p>
+      <%= f.label :company_id %>
+      <%= f.text_field :company_id %>
+
+      <%= f.label :job_title %>
+      <%= f.text_field :job_title %>
 
       <%= f.label :rating %>
       <%= f.text_field :rating %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+
+      <%= f.label :salary %>
+      <%= f.text_field :salary %>
+
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+
+      <%= f.label :term %>
+      <%= f.text_field :term %>
+
+      <%= f.label :year %>
+      <%= f.text_field :year %>
 
       <%= f.submit "Create Review", class: "btn btn-primary" %>
     <% end %>
