@@ -1,5 +1,5 @@
-jarjar:
-  first_name: Jar Jar
-  last_name: Binks
-  email: jjbinks@galacticsenate.org
+user1:
+  first_name: User1 
+  last_name: Test
+  email: user1@example.com
   password_digest: <%= User.digest('password') %>
