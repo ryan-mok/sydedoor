@@ -21,25 +21,23 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # Need to discuss how we want to implement edit/update/delete for reviews
-  #
-  # def edit
-  #   @review = Review.find(params[:id])
-  # end
-  #
-  # def update
-  #   @review = Review.find(params[:id])
-  #   if @review.update_attributes(review_params)
-  #     redirect_to @review
-  #   else
-  #     render 'edit'
-  #   end
-  # end
-  #
-  # def destroy
-  #   Review.find(params[:id]).destroy
-  #   redirect_to reviews_path
-  # end
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    if @review.update_attributes(review_params)
+      redirect_to @review
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    Review.find(params[:id]).destroy
+    redirect_to reviews_path
+  end
 
   private
 
