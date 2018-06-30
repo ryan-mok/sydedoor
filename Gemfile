@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'bcrypt',       '3.1.12'
+gem 'bcrypt', '3.1.12'
 gem 'bootstrap-sass', '3.3.7'
 gem 'coffee-rails', '4.2.2'
 gem 'jbuilder',     '2.7.0'
@@ -14,7 +14,7 @@ gem 'uglifier',     '3.2.0'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 group :development, :test do
-  gem 'byebug',  '10.0.2'
+  gem 'byebug', '10.0.2'
   gem 'pry', '0.11.3'
   gem 'pry-byebug', '3.6.0'
   gem 'rubocop', '0.57.2', require: false

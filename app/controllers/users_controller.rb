@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-
   def index
-    render html: "TODO: user display page"
+    render html: 'TODO: user display page'
   end
 
   def show
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to SydeDoor!"
+      flash[:success] = 'Welcome to SydeDoor!'
       redirect_to @user
     else
       render 'new'

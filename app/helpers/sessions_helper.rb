@@ -1,7 +1,7 @@
 module SessionsHelper
-	# [nil] Logs in the user
+  # [nil] Logs in the user
   def log_in(user)
-  	session[:user_id] = user.id
+    session[:user_id] = user.id
   end
 
   # [nil] Logs out the current user
@@ -17,6 +17,6 @@ module SessionsHelper
 
   # [Bool] Returns if the user is logged in or not
   def logged_in?
-  	!current_user.nil?
+    !current_user.nil?
   end
 end

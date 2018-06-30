@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def index
-    render html: "TODO: display all reviews on this page"
+    @reviews = Review.all
   end
 
   def show
@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.user ||= current_user
     if @review.save
       redirect_to @review
     else
