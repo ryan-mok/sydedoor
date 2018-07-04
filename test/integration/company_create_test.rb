@@ -4,7 +4,7 @@ class CompaniesCreateTest < ActionDispatch::IntegrationTest
   test "invalid company creation" do
     get new_company_path
     assert_no_difference 'Company.count' do
-      post companies_path, params: { company: { name: "name" } }
+      post companies_path, params: { company: { name: "" } }
     end
     assert_template 'companies/new'
   end

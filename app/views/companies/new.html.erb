@@ -1,18 +1,20 @@
-<% provide(:title, 'New Company') %>
-<h1>New Compant</h1>
-<p>This will be a new review page for creating a new company.</p>
+<% provide(:title, 'Create Company') %>
+<h1>Create Company</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@review, url: companies_path) do |f| %>
+    <%= form_for(@company, url: companies_path) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name%>
 
       <%= f.label :description %>
-      <%= f.text_field :description %>
+      <%= f.text_field :description%>
 
-      <%= f.submit "Company Review", class: "btn btn-primary" %>
+      <%= f.label :website %>
+      <%= f.text_field :website%>
+
+      <%= f.submit "Create company", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
