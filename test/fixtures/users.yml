@@ -9,4 +9,3 @@ user2:
   last_name: LastName
   email: user2@example.com
   password_digest: <%= User.digest('password') %>
-  
