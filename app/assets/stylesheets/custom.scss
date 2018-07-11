@@ -1,6 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* variables */
+$state-danger-text: #a94442;
+$gray-lighter: #d3d3d3;
+
+
 /* universal */
 
 body {
@@ -122,6 +127,17 @@ input {
 /* reviews index */
 
 .reviews {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+
+/* Users index */
+
+.users {
   list-style: none;
   margin: 0;
   li {
