@@ -5,9 +5,8 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@review, url: reviews_path) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <p>Note: Enter the company id for an existing company for now.</p>
       <%= f.label :company_id %>
-      <%= f.text_field :company_id %>
+      <%= f.collection_select :company_id, Company.order(:name), :id, :name, include_blank: true %>
 
       <%= f.label :job_title %>
       <%= f.text_field :job_title %>
