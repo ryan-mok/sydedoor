@@ -1,0 +1,12 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/*'
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
+
+Layout/IndentationConsistency:
+  EnforcedStyle: rails
