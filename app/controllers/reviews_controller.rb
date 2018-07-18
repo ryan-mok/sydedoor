@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to @review
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
     if @review.update_attributes(review_params)
       redirect_to @review
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -41,7 +41,9 @@ class ReviewsController < ApplicationController
 
   private
 
-  def review_params
-    params.require(:review).permit(:user_id, :company_id, :rating, :job_title, :term, :year, :salary, :location, :description)
-  end
+    def review_params
+      params
+        .require(:review)
+        .permit(:user_id, :company_id, :rating, :job_title, :term, :year, :salary, :location, :description)
+    end
 end

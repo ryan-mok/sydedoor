@@ -23,7 +23,10 @@ class Review < ApplicationRecord
 
   validates :term,
             presence: true,
-            format: { with: /\A[1-4][A-B]\z/, message: 'Not a valid term, must be between 1A and 4B' }
+            format: {
+              with: /\A[1-4][A-B]\z/,
+              message: "Not a valid term, must be between 1A and 4B"
+            }
 
   validates :year,
             presence: true,
@@ -31,7 +34,7 @@ class Review < ApplicationRecord
               only_integer: true,
               greater_than_or_equal_to: 1960
             },
-            format: { with: /\A[0-9]{4}\z/, message: 'Not valid year' }
+            format: { with: /\A[0-9]{4}\z/, message: "Not valid year" }
 
   validates :salary,
             presence: true
