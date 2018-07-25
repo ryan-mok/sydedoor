@@ -6,10 +6,12 @@
     <%= form_for(@review, url: reviews_path) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :company %>
-      <%= f.autocomplete_field :company, autocomplete_company_name_reviews_path,
-                               'data-auto-focus': true,
-                               'data-noMatchesLabel': 'No companies found. Please create one!',
-                               'min-length': 0 %>
+      <%= autocomplete_field_tag "company", "", autocomplete_company_name_reviews_path,
+                                   id_element: '#company_id_hidden',
+                                   'data-auto-focus': true,
+                                   'data-noMatchesLabel': 'No companies found. Please create one!',
+                                   'min-length': 0 %>
+      <%= f.hidden_field :company_id, id: "company_id_hidden" %>
 
       <%= f.label :job_title %>
       <%= f.text_field :job_title %>
