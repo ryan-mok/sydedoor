@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  autocomplete :company, :name, full: true, limit: 10
+
   def index
     @reviews = Review.all
   end
