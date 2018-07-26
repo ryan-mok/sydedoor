@@ -7,6 +7,9 @@
         $('#company').autocomplete({ minLength : 0 }).focus(function() {
             $(this).autocomplete("search");
         });
+        $("#company").on( "autocompletesearch", function() {
+            $(this).data("ui-autocomplete").menu.bindings = $();
+        } );
     });
 </script>
 
