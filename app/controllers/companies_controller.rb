@@ -1,7 +1,6 @@
 class CompaniesController < ApplicationController
   def index
     @companies = Company.all
-    render html: "TODO: company display page"
   end
 
   def show
