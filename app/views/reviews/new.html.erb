@@ -1,12 +1,29 @@
 <% provide(:title, 'New Review') %>
+
+<%= javascript_include_tag 'reviews' %>
+
 <h1>New Review</h1>
+
+<script>
+    // Temporary solution so that this JavaScript is only loaded with this page
+    $(window).ready(function() {
+        $('#company').autocomplete({ minLength : 0 }).focus(function() {
+            $(this).autocomplete("search");
+        });
+    });
+</script>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@review, url: reviews_path) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :company_id %>
-      <%= f.collection_select :company_id, Company.order(:name), :id, :name, include_blank: true %>
+      <%= f.label :company %>
+      <%= autocomplete_field_tag "company", "", autocomplete_company_name_reviews_path,
+                                   id_element: '#company_id_hidden',
+                                   'data-auto-focus': true,
+                                   'data-noMatchesLabel': 'No companies found. Please create one!',
+                                   'min-length': 0 %>
+      <%= f.hidden_field :company_id, id: "company_id_hidden" %>
 
       <%= f.label :job_title %>
       <%= f.text_field :job_title %>
