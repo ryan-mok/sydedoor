@@ -16,7 +16,7 @@ class CompaniesController < ApplicationController
     if @company.save
       redirect_to @company
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -25,13 +25,13 @@ class CompaniesController < ApplicationController
     if @company.update_attributes(company_params)
       redirect_to @company
     else
-      render 'edit'
+      render "edit"
     end
   end
 
   private
 
-  def company_params
-    params.require(:company).permit(:name, :description, :website)
-  end
+    def company_params
+      params.require(:company).permit(:name, :description, :website)
+    end
 end
