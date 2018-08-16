@@ -1,6 +1,11 @@
 require "test_helper"
 
 class ReviewsCreateTest < ActionDispatch::IntegrationTest
+  def setup
+    @user = users(:user1)
+    log_in_as(@user)
+  end
+
   test "invalid review creation" do
     get new_review_path
     assert_no_difference "Review.count" do

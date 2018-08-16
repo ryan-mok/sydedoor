@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :logged_in_user , only: [:index, :create]
+  before_action :logged_in_user , only: [:index, :create, :new]
   #before_action :correct_user,   only: [:edit, :update, :destroy]
   autocomplete :company, :name, full: true, limit: 1000
 
