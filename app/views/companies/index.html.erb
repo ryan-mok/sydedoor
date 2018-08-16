@@ -1,5 +1,9 @@
 <% provide(:title, 'All companies') %>
 
 <ul class="companies">
-  <%= render @companies %>
+  <% @companies.each do |company| %>
+    <li>
+      Company: <%= link_to company.name, company %><br/>
+    </li>
+  <% end %>
 </ul>
