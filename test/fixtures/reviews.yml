@@ -1,9 +1,11 @@
 review1:
-  rating: 4.5
-  job_title: 'Father'
-  company_id: "1"
-  term: '4A'
-  year: 1977
-  salary: '10-20'
-  location: 'In a galaxy far far away.....'
-  description: 'Job can be pretty stressful at times but has awesome perks like cool suits. Great CEO XD'
+  id: 1
+  company_id: 1
+  user_id: 1
+  rating: 1
+  job_title: First Job Title
+  term: 1A
+  year: 2011
+  salary: 10-20
+  location: First Location
+  description: First Review Description

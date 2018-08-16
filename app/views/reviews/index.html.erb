@@ -5,8 +5,8 @@
   <% @reviews.each do |review| %>
     <li>
       Job Title: <%= link_to review.job_title, review %><br/>
-      Company: <%= review.company.name%><br/>
-      Reviewer: <%= review.user.first_name%>
+      Company: <%= review.company.name %><br/>
+      Reviewer: <%= review.user.first_name %>
     </li>
   <% end %>
 </ul>
