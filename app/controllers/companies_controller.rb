@@ -1,4 +1,6 @@
 class CompaniesController < ApplicationController
+  autocomplete :company, :name, full: true, limit: 1000
+
   def index
     @companies = Company.all
   end
@@ -27,6 +29,10 @@ class CompaniesController < ApplicationController
     else
       render "edit"
     end
+  end
+
+  def select_company
+    @company = Company.new
   end
 
   private
