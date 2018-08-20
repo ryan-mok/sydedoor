@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  autocomplete :company, :name, full: true, limit: 1000
+  autocomplete :company, :name, :extra_data => [:name, :description], full: true, limit: 1000
 
   def index
     @companies = Company.all
@@ -33,6 +33,15 @@ class CompaniesController < ApplicationController
 
   def select_company
     @company = Company.new
+  end
+
+  def get_company
+    @company = Company.find(params[:id])
+    render :json => @company
+  end
+
+  def selected_company?
+
   end
 
   private

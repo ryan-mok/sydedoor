@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'sessions/new'
 
+  get 'companies/get_company/:id' => 'companies#get_company'
   get 'companies/select_company', to: 'companies#select_company'
+
   root 'static_pages#home'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
