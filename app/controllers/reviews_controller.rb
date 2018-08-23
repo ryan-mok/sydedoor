@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :logged_in_user, only: %i[index create new]
-  # before_action :correct_user,   only: [:edit, :update, :destroy]
+  before_action :logged_in_user, only: %i[index create new edit update destroy]
+  before_action :correct_user,   only: %i[edit update destroy]
   autocomplete :company, :name, full: true, limit: 1000
 
   def index
@@ -62,10 +62,9 @@ class ReviewsController < ApplicationController
     end
 
     def correct_user
-      # Grabbing wrong user
-      @user = User.find(params[:id])
-      flash[:danger] = @user
-      # Figure out way to only display correct options like edit and delete to appropriate user, need to edit 'show.html.erb'
+      @review = Review.find(params[:id])
+      @user = User.find_by(id: @review.user_id)
+
       redirect_to(root_url) unless current_user?(@user)
     end
 end
