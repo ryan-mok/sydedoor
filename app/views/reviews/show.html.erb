@@ -10,7 +10,9 @@
       Salary: <%= @review.salary %><br/>
       Location: <%= @review.location %><br/>
       Term: <%= @review.term %><br/>
-      Year: <%= @review.year %>
+      Year: <%= @review.year %><br/>
+      <%= link_to "Edit Review", edit_review_path(@review) %><br/>
+      <%= link_to "Delete Review", @review, method: :delete %><br/>
     </section>
   </aside>
 </div>

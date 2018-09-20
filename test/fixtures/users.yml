@@ -1,11 +1,13 @@
 user1:
-  first_name: User1 
+  id: 1
+  first_name: User1
   last_name: Test
   email: user1@example.com
   password_digest: <%= User.digest('password') %>
 
 user2:
+  id: 2
   first_name: User2
-  last_name: LastName
+  last_name: Test
   email: user2@example.com
   password_digest: <%= User.digest('password') %>

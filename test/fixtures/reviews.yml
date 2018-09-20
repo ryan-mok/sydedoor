@@ -1,1 +1,11 @@
-
+review1:
+  id: 1
+  company_id: 1
+  user_id: 1
+  rating: 1
+  job_title: First Job Title
+  term: 1A
+  year: 2011
+  salary: 10-20
+  location: First Location
+  description: First Review Description

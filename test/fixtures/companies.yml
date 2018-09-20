@@ -1,4 +1,5 @@
 company1:
+  id: 1
   name: Company One
   description: Description of Company One
   website: companyone.com
