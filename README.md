@@ -1,5 +1,5 @@
 # SydeDoor
-SydeDoor is a Ruby on Rails web application that allows for students to connect and share their work experiences.
+SydeDoor is a Ruby on Rails web application that allows students to connect with one another and share their work experiences.
 The application is currently in development.
 
 ## Technology
@@ -7,7 +7,7 @@ SydeDoor is built using Ruby on Rails and runs on Heroku. The website models use
 Currently, there is functionality for logging in and out, viewing companies and creating and viewing reviews.
 
 ## Design
-Please click [here](https://www.charmainewang.ca/sydedoor) to learn more about the user experience design process behind SydeDoor.
+Please click [here](https://www.charmainewang.ca/sydedoor.html) to learn more about the user experience and design process behind SydeDoor.
 
 ## Contributors
 * [Neil Agarwal](https://neilagarwal.ca/)
