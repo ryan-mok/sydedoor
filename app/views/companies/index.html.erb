@@ -1,9 +1,17 @@
-<% provide(:title, 'All companies') %>
+<% provide(:title, 'Companies') %>
 
 <ul class="companies">
-  <% @companies.each do |company| %>
-    <li>
-      Company: <%= link_to company.name, company %><br/>
-    </li>
-  <% end %>
+  <input type="text" id="company_lookup" onkeyup="company_filter()" placeholder="Search">
+  <table id="company_table">
+    <tr>
+      <th>Companies</th>
+    </tr>
+    <% @companies.each do |company| %>
+      <tr>
+        <td>
+          <%= link_to company.name, company %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </ul>
