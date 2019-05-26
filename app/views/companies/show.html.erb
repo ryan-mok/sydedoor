@@ -6,7 +6,7 @@
       Company Description: <%= @company.description %>
       Company Website: <%= @company.website %>
 
-      <% @reviews.each do |review| %>
+      <% company.reviews.each do |review| %>
         <%= review.inspect %>
       <% end %>
     </section>
