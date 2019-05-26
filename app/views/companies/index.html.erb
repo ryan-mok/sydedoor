@@ -1,17 +1,27 @@
 <% provide(:title, 'Companies') %>
 
-<ul class="companies">
-  <input type="text" id="company_lookup" onkeyup="company_filter()" placeholder="Search">
-  <table id="company_table">
-    <tr>
-      <th>Companies</th>
-    </tr>
-    <% @companies.each do |company| %>
+<div class="container">
+  <div class="row">
+    <div class="input-group">
+      <input type="text" id="company_lookup" onkeyup="company_filter()" placeholder="Search" class="form-control">
+      <span class="input-group-btn">
+      <%= button_to "+ Add Review", new_review_path, class: 'btn btn-primary' %>
+    </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <table id="company_table">
       <tr>
-        <td>
-          <%= link_to company.name, company %>
-        </td>
+        <th>Companies</th>
       </tr>
-    <% end %>
-  </table>
-</ul>
+      <% @companies.each do |company| %>
+        <tr>
+          <td>
+            <%= link_to company.name, company %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
