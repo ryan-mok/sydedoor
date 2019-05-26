@@ -4,7 +4,9 @@ test_user = User.create!(
   last_name: 'User',
   email: 'user@test.com',
   password: 'password',
-  password_confirmation: 'password'
+  password_confirmation: 'password',
+  activated: true,
+  activated_at: Time.zone.now
 )
 
 p 'Creating sample users'
@@ -18,7 +20,9 @@ p 'Creating sample users'
     last_name: last_name,
     email: email,
     password: password,
-    password_confirmation: password
+    password_confirmation: password,
+    activated: true,
+    activated_at: Time.zone.now
   )
 end
 
