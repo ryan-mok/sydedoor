@@ -1,10 +1,11 @@
 class CompaniesController < ApplicationController
   def index
-    @companies = Company.all
+    @companies = Company.all.order(:name)
   end
 
   def show
     @company = Company.find(params[:id])
+    @reviews = Review.where(company_id: params[:id])
   end
 
   def new

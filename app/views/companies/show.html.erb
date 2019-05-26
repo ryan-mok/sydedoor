@@ -5,6 +5,10 @@
       Company Name: <%= @company.name %>
       Company Description: <%= @company.description %>
       Company Website: <%= @company.website %>
+
+      <% @reviews.each do |review| %>
+        <%= review.inspect %>
+      <% end %>
     </section>
   </aside>
 </div>
