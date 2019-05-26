@@ -1,3 +1,91 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Place all the styles related to the StaticPages controller here.
+They will automatically be included in application.css.
+You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+body {
+	background-color: #F8F8F8;
+}
+
+.background-img {
+	width: 100%;
+	height: 100%;
+}
+
+.section-user {
+	width: 100%;
+	padding: 20px;
+	margin-top: 20px;
+	height: 200px;
+
+	background: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	box-sizing: border-box;
+	border-radius: 6px;
+
+	font-family: Lato;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 19px;
+
+	letter-spacing: 0.916667px;
+}
+
+.h1 {
+	font-family: Lato;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 32px;
+	line-height: 38px;
+	letter-spacing: 1px;
+}
+
+.section-work-experience {
+	width: 100%;
+	padding: 20px;
+	margin-top: 20px;
+
+	background: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	box-sizing: border-box;
+	border-radius: 6px;
+
+	font-family: Lato;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+.user-profile-image {
+	float: left;
+	margin-right: 20px;
+	width: 100px;
+	height: 100px;
+	background-color: grey;
+	border-radius: 50px;
+}
+
+.user-info {
+	float: right;
+	margin-top: -90px;
+	margin-right: 10px;
+}
+
+.social-links {
+	margin-top: 20px;
+}
+
+.social-icon {
+	font-size: 30px;
+	margin-right: 5px;
+}
+
+.user-company-icon {
+	float: left;
+	margin: 20px;
+	background-color: grey;
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+}
