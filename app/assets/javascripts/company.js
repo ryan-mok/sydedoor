@@ -1,6 +1,6 @@
 // Source: https://www.w3schools.com/howto/howto_js_filter_table.asp
 function company_filter() {
-    let input, filter, table, tr, td, i, txtValue;
+    var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("company_lookup");
     filter = input.value.toUpperCase();
     table = document.getElementById("company_table");
