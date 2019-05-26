@@ -4,8 +4,6 @@ user1:
   last_name: Test
   email: user1@example.com
   password_digest: <%= User.digest('password') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
 
 user2:
   id: 2
@@ -13,5 +11,3 @@ user2:
   last_name: Test
   email: user2@example.com
   password_digest: <%= User.digest('password') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
