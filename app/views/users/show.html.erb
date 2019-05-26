@@ -1,11 +1,42 @@
 <% provide(:title, [@user.first_name, @user.last_name].join(' ')) %>
 
 <div class="row">
-  <aside class="col-md-4">
+  <aside>
     <section class="user_info">
-      <h1>
-        <%= @user.first_name %> <%= @user.last_name %>
-      </h1>
+
+    	<div class="section-user">
+    		<div class="user-profile-image">
+    		</div>
+
+    		<h1>
+	        	<%= @user.first_name %> <%= @user.last_name %>
+	      	</h1>
+
+	      	<div class="social-links">
+	      		<i class="social-icon fab fa-facebook"></i>
+	      		<i class="social-icon fab fa-linkedin"></i>
+	      		<i class="social-icon fab fa-google-plus-square"></i>
+	      	</div>
+
+	      	<div class="user-info">
+	      		grad year: <%= @user.grad_year %>
+	      		<br>
+	      		current company: <%= @user.current_company %>
+	      	</div>
+    	</div>
+
+    	<div class="section-work-experience">
+    		<h1>Work Experiences</h1>
+    		<div class="user-company-icons">
+    			<div class="user-company-icon company-1">
+    			</div>
+    			<div class="user-company-icon company-2">
+    			</div>
+    			<div class="user-company-icon company-3">
+    			</div>
+    		</div>
+    	</div>
+
     </section>
   </aside>
 </div>
