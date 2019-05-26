@@ -5,7 +5,6 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
-    @reviews = Review.where(company_id: params[:id])
   end
 
   def new
