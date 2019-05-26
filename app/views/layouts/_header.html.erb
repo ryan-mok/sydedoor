@@ -1,14 +1,16 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-inverse niceNavbar">
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <div class="container">
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
 
     <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   root_path %></li>
-        <li><%= link_to "Help",   '#' %></li>
+      <ul class = "nav navbar-nav">
+        <li><%= link_to "#{image_tag("sydedoorlogo.png", height: '36', width: '196')}".html_safe, root_path %></li>
+      </ul>
+      <ul class="nav navbar-nav">
         <% if logged_in? %>
+          <li><%= link_to "Companies", companies_path %></li>
           <li><%= link_to "Users", users_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -21,10 +23,17 @@
                 <li><%= link_to "Log out", logout_path, method: :delete %></li>
             </ul>
           </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
         <% end %>
       </ul>
+      <% if !logged_in? %>
+        <%= form_for(:session, url: login_path, html: {class: 'navbar-form navbar-right'}) do |f| %>
+          <div class="form-group">
+            <%= f.email_field :email, placeholder: "Email Address", class: "form-control" %>
+            <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+          </div>
+          <%= f.submit "Log in", class: "form-control btn-primary" %>
+        <% end %>
+      <% end %>
     </nav>
   </div>
 </header>
