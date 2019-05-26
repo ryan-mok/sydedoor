@@ -6,7 +6,10 @@ body {
 	background-color: #F8F8F8;
 }
 
-body {
+.homepage-body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
   background-image: url(homepage-background.svg);
   -webkit-background-size: 100%;
   background-size: 100%;
@@ -98,10 +101,10 @@ body {
 }
 
 .signup-form {
-  margin-top: 250px;
+  margin-top: 300px;
   float: right;
   width: 400px;
-  margin-right: 50px;
+  margin-right: 450px;
 }
 
 .signup-form-title {
@@ -145,8 +148,8 @@ body {
   width: 416px;
   height: 540px;
   float: left;
-  margin-top: 220px;
-  margin-left: -150px;
+  margin-top:260px;
+  margin-left: -100px;
 
 }
 
